@@ -30,7 +30,7 @@ export default function WeatherForecastDay(props){
             </div>
 
             <div className="WeatherForecast-icon">
-            <img src={props.weatherData.iconUrl} alt="cloudy"
+            <img src={`https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`} alt="cloudy"
             className="float-left" />
             </div>
 

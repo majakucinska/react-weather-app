@@ -10,7 +10,6 @@ export default function WeatherForecast(props){
     function handleResponse(response){
         setForecast(response.data.daily);
         setLoaded(true);
-        console.log(response.data);
     }
     
     if(loaded){
@@ -18,19 +17,19 @@ export default function WeatherForecast(props){
         <div className="WeatherForecast">
             <div className="row">
                 <div className="col">
-                    <WeatherForecastDay data={forecast[0]} iconUrl={props.weatherData.iconUrl} />
+                    <WeatherForecastDay data={forecast[0]} />
                 </div>
                 <div className="col">
-                    <WeatherForecastDay data={forecast[1]} iconUrl={props.weatherData.iconUrl} />
+                    <WeatherForecastDay data={forecast[1]} />
                 </div>
                 <div className="col">
-                    <WeatherForecastDay data={forecast[2]} iconUrl={props.weatherData.iconUrl} />
+                    <WeatherForecastDay data={forecast[2]} />
                 </div>
                 <div className="col">
-                    <WeatherForecastDay data={forecast[3]} iconUrl={props.weatherData.iconUrl} />
+                    <WeatherForecastDay data={forecast[3]} />
                 </div>
                 <div className="col">
-                    <WeatherForecastDay data={forecast[4]} iconUrl={props.weatherData.iconUrl} />
+                    <WeatherForecastDay data={forecast[4]} />
                 </div>
             </div>
         </div>
@@ -42,7 +41,7 @@ export default function WeatherForecast(props){
         let latitude = props.coordinates.lat;
         let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-        console.log()
+      
     
         Axios.get(apiUrl).then(handleResponse);
     
